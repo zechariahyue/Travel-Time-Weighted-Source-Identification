@@ -20,6 +20,9 @@ reproducibility/
     75_nearfield_source_simulation.py       ← near-field source simulation
     76_fair_binary_vs_exponential.py        ← fair binary vs exponential comparison
     77_sensitivity_misattribution_topk.py   ← sigma_d sweep, mis-attribution, top-k
+    78_ml_baselines.py                      ← Random Forest + Logistic Regression LOOCV
+    79_threshold_sensitivity.py             ← event detection threshold sensitivity
+    80_network_distance_nhd.py              ← NHDPlus river network distance baseline
   sample_data/
     rankings_ampac_events.csv     ← 7,832 rows: all 44 AMPAC events × 178 records
   README.md                       ← this file
@@ -126,6 +129,25 @@ python scripts/65_loocv_exponential_propagation.py   # also generates sensitivit
 ```
 
 ---
+
+### Table 6 & Table 7 — ML baselines and threshold sensitivity
+```bash
+python scripts/78_ml_baselines.py
+# outputs: results/ml_baselines/ml_baseline_results.json
+#          results/ml_baselines/ml_baseline_detail.csv
+
+python scripts/79_threshold_sensitivity.py
+# outputs: results/threshold_sensitivity/threshold_sensitivity_results.json
+#          manuscript/FigureS6_Threshold_Sensitivity.png
+```
+
+### Table (network distance) — NHDPlus river distance baseline
+```bash
+python scripts/80_network_distance_nhd.py
+# outputs: results/network_distance_nhd/nhd_distance_results.json
+#          results/network_distance_nhd/nhd_vs_euclidean_comparison.csv
+# Note: requires internet access to query the USGS NHDPlus REST API
+```
 
 ## Ground Truth
 
